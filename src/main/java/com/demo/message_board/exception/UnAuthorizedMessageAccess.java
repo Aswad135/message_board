@@ -1,4 +1,4 @@
-package com.demo.message_board.Exception;
+package com.demo.message_board.exception;
 
 public class UnAuthorizedMessageAccess extends RuntimeException {
     public UnAuthorizedMessageAccess() {

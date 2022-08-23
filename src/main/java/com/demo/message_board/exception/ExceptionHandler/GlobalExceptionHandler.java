@@ -1,5 +1,7 @@
-package com.demo.message_board.Exception;
+package com.demo.message_board.exception.ExceptionHandler;
 
+import com.demo.message_board.exception.MessageNotFoundException;
+import com.demo.message_board.exception.UnAuthorizedMessageAccess;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
