@@ -1,4 +1,4 @@
-package com.demo.message_board.services;
+package com.demo.message_board.service;
 
 import com.demo.message_board.entities.Message;
 import com.demo.message_board.repository.MessageRepository;

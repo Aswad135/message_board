@@ -3,7 +3,7 @@ package com.demo.message_board.controller.impl;
 
 import com.demo.message_board.controller.MessageController;
 import com.demo.message_board.entities.Message;
-import com.demo.message_board.services.MessageService;
+import com.demo.message_board.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 
