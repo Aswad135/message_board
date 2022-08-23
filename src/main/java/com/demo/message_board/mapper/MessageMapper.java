@@ -9,7 +9,6 @@ import org.mapstruct.Mapper;
 public abstract class MessageMapper {
 
 
-
     public abstract MessageDTO toDTO(Message message);
 
     @InheritInverseConfiguration(name = "toDTO")

@@ -15,6 +15,9 @@ public interface MessageController {
     @GetMapping(path = "/messages")
     ResponseEntity<List<Message>> getMessages();
 
+    @GetMapping(path = "/messages/{id}")
+    ResponseEntity<Message> getMessageWithId(@PathVariable int id);
+
     @PostMapping(path = "/messages/save")
     ResponseEntity<Message> addNewMessage(@RequestBody Message message);
 

@@ -29,6 +29,11 @@ public class MessageControllerImpl implements MessageController {
     }
 
     @Override
+    public ResponseEntity<Message> getMessageWithId(int id) {
+        return this.service.getMessageWithId(id);
+    }
+
+    @Override
     public ResponseEntity<Message> addNewMessage(Message message) {
         return this.service.addNewMessage(message);
     }
