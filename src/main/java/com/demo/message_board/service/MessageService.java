@@ -7,6 +7,7 @@ import com.demo.message_board.exception.GlobalException;
 import com.demo.message_board.exception.MessageNotFoundException;
 import com.demo.message_board.mapper.MessageMapper;
 import com.demo.message_board.repository.MessageRepository;
+import com.demo.message_board.utils.Utils;
 import org.mapstruct.factory.Mappers;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -108,5 +109,11 @@ public class MessageService {
             logger.error(ex.getMessage());
         }
         throw new GlobalException();
+    }
+
+    public void addDummyData() {
+        for (Message dummyDatum : Utils.getDummyData()) {
+            addNewMessage(messageMapper.toDTO(dummyDatum));
+        }
     }
 }

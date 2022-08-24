@@ -3,7 +3,6 @@ package com.demo.message_board.controller.impl;
 
 import com.demo.message_board.controller.MessageController;
 import com.demo.message_board.dto.MessageDTO;
-import com.demo.message_board.entities.Message;
 import com.demo.message_board.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -50,5 +49,10 @@ public class MessageControllerImpl implements MessageController {
     @Override
     public ResponseEntity<Boolean> deleteMessage(int id) {
         return this.service.deleteMessage(id);
+    }
+
+    @Override
+    public void addDummyData() {
+        this.service.addDummyData();
     }
 }

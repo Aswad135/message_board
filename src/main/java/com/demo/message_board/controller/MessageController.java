@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface MessageController {
 
-    @GetMapping(path = "/message/all")
+    @GetMapping(path = "/messages/all")
     ResponseEntity<List<MessageDTO>> getAllMessages();
 
     @GetMapping(path = "/messages")
@@ -27,4 +27,6 @@ public interface MessageController {
     @DeleteMapping(path = "/messages/delete/{id}")
     ResponseEntity<Boolean> deleteMessage(@PathVariable int id);
 
+    @GetMapping(path = "/messages/add/dummy")
+    void addDummyData();
 }
