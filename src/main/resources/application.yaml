@@ -4,9 +4,13 @@ spring:
     username: sa
     password: password
     driverClassName: org.h2.Driver
+
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
-    defer-datasource-initialization: true
+    defer-datasource-initialization: false
+    hibernate:
+      ddl-auto: create-drop
+
   h2:
     console:
       enabled: true

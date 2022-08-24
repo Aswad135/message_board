@@ -16,24 +16,21 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ResponseBody
     public MessageNotFoundException handleMessageNotFoundException(MessageNotFoundException ex) {
-        MessageNotFoundException errorResponse = new MessageNotFoundException();
-        return errorResponse;
+        return ex;
     }
 
     @ExceptionHandler(UnAuthorizedMessageAccess.class)
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ResponseBody
     public UnAuthorizedMessageAccess handleUnAuthorizedAccessException(UnAuthorizedMessageAccess ex) {
-        UnAuthorizedMessageAccess errorResponse = new UnAuthorizedMessageAccess();
-        return errorResponse;
+        return ex;
     }
 
     @ExceptionHandler(GlobalException.class)
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ResponseBody
     public GlobalException handleUnAuthorizedAccessException(GlobalException ex) {
-        GlobalException errorResponse = new GlobalException();
-        return errorResponse;
+        return ex;
     }
 
 

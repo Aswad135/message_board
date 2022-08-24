@@ -1,5 +1,6 @@
 package com.demo.message_board.controller;
 
+import com.demo.message_board.dto.MessageDTO;
 import com.demo.message_board.entities.Message;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,19 +11,19 @@ import java.util.List;
 public interface MessageController {
 
     @GetMapping(path = "/message/all")
-    ResponseEntity<List<Message>> getAllMessages();
+    ResponseEntity<List<MessageDTO>> getAllMessages();
 
     @GetMapping(path = "/messages")
-    ResponseEntity<List<Message>> getMessages();
+    ResponseEntity<List<MessageDTO>> getMessages();
 
     @GetMapping(path = "/messages/{id}")
-    ResponseEntity<Message> getMessageWithId(@PathVariable int id);
+    ResponseEntity<MessageDTO> getMessageWithId(@PathVariable int id);
 
     @PostMapping(path = "/messages/save")
-    ResponseEntity<Message> addNewMessage(@RequestBody Message message);
+    ResponseEntity<MessageDTO> addNewMessage(@RequestBody MessageDTO message);
 
     @PutMapping(path = "/messages/update")
-    ResponseEntity<Message> updateMessage(@RequestBody Message message);
+    ResponseEntity<MessageDTO> updateMessage(@RequestBody MessageDTO message);
 
     @DeleteMapping(path = "/messages/delete/{id}")
     ResponseEntity<Boolean> deleteMessage(@PathVariable int id);

@@ -6,6 +6,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.*;
 import java.util.Set;
 
 
@@ -14,16 +15,18 @@ import java.util.Set;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
+
+@Table(name = "auth_user")
 public class User {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private String email;
     private String password;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Set<Role> roles;
-
+    @OneToMany(cascade = CascadeType.REMOVE)
+    private List<Message> messageList;
 }

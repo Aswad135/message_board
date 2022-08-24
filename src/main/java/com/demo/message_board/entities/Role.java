@@ -12,6 +12,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @EqualsAndHashCode
 @Entity
+
+@Table(name = "auth_role")
 public class Role {
 
     @Id

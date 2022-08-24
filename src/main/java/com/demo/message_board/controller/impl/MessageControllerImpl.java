@@ -2,6 +2,7 @@ package com.demo.message_board.controller.impl;
 
 
 import com.demo.message_board.controller.MessageController;
+import com.demo.message_board.dto.MessageDTO;
 import com.demo.message_board.entities.Message;
 import com.demo.message_board.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,27 +20,27 @@ public class MessageControllerImpl implements MessageController {
     }
 
     @Override
-    public ResponseEntity<List<Message>> getAllMessages() {
+    public ResponseEntity<List<MessageDTO>> getAllMessages() {
         return this.service.getAllMessages();
     }
 
     @Override
-    public ResponseEntity<List<Message>> getMessages() {
+    public ResponseEntity<List<MessageDTO>> getMessages() {
         return this.service.getMessages();
     }
 
     @Override
-    public ResponseEntity<Message> getMessageWithId(int id) {
+    public ResponseEntity<MessageDTO> getMessageWithId(int id) {
         return this.service.getMessageWithId(id);
     }
 
     @Override
-    public ResponseEntity<Message> addNewMessage(Message message) {
+    public ResponseEntity<MessageDTO> addNewMessage(MessageDTO message) {
         return this.service.addNewMessage(message);
     }
 
     @Override
-    public ResponseEntity<Message> updateMessage(Message message) {
+    public ResponseEntity<MessageDTO> updateMessage(MessageDTO message) {
         return this.service.updateMessage(message);
     }
 
