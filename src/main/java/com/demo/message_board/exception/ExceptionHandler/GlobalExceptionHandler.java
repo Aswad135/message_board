@@ -1,5 +1,6 @@
 package com.demo.message_board.exception.ExceptionHandler;
 
+import com.demo.message_board.exception.GlobalException;
 import com.demo.message_board.exception.MessageNotFoundException;
 import com.demo.message_board.exception.UnAuthorizedMessageAccess;
 import org.springframework.http.HttpStatus;
@@ -24,6 +25,14 @@ public class GlobalExceptionHandler {
     @ResponseBody
     public UnAuthorizedMessageAccess handleUnAuthorizedAccessException(UnAuthorizedMessageAccess ex) {
         UnAuthorizedMessageAccess errorResponse = new UnAuthorizedMessageAccess();
+        return errorResponse;
+    }
+
+    @ExceptionHandler(GlobalException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public GlobalException handleUnAuthorizedAccessException(GlobalException ex) {
+        GlobalException errorResponse = new GlobalException();
         return errorResponse;
     }
 
